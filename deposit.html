@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deposit</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Deposit Funds</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="withdrawal.html">Withdrawal</a></li>
+        <li><a href="login.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Deposit Instructions</h2>
+    <p>Send money via MPESA to the following number:</p>
+    <p><strong>+254 799 629 116</strong></p>
+    <p>After sending, enter the amount below:</p>
+    <form id="deposit-form">
+      <input type="number" id="deposit-amount" placeholder="Enter Amount in Kenyan Shillings (KES)" required>
+      <button type="button" id="deposit-button">Deposit</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2005 Horse Betting</p>
+  </footer>
+
+  <script>
+    document.getElementById('deposit-button').addEventListener('click', () => {
+      const depositAmount = document.getElementById('deposit-amount').value;
+
+      if (!depositAmount || depositAmount <= 0) {
+        alert('Please enter a valid deposit amount.');
+        return;
+      }
+
+      alert(`Deposit of ${depositAmount} Kenyan Shillings successful!`);
+      window.location.href = 'profile.html';
+    });
+  </script>
+</body>
+  </html>
+  
